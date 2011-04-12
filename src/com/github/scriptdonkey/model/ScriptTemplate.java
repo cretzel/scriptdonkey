@@ -18,8 +18,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
-import com.github.scriptdonkey.Users;
 import com.github.scriptdonkey.persistence.PMF;
+import com.github.scriptdonkey.web.util.Users;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.users.User;
 import com.google.appengine.repackaged.com.google.common.collect.Lists;

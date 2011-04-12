@@ -1,12 +1,9 @@
 @CHARSET "ISO-8859-1";
 
-body,p,li,a,span,div,td,th {
-	font-family: courier new;
-	font-family: 'Slackey', arial, serif;
-	font-family: 'VT323', arial, serif;
+body,p,li,span,div,td,th,input,select,a,em {
 	font-family: tahoma, arial, serif;
-	font-size: 11pt;
 	color: #555;
+	font-size: 10pt;
 }
 
 textarea {
@@ -14,19 +11,45 @@ textarea {
 }
 
 input,select {
-	font-family: tahoma, arial, serif;
-}
-
-h1,h2,h3 { /*font-family: 'Yanone Kaffeesatz', arial, serif;*/
-	/*font-family: 'Terminal Dosis Light', arial, serif;*/
-	font-family: 'Slackey', arial, serif;
-	font-family: 'VT323', arial, serif;
-	font-family: tahoma, arial, serif;
+	
 }
 
 h1 {
+	font-family: 'Terminal Dosis Light', arial, serif;
 	font-size: 32pt;
 }
+
+h2,h3 {
+	font-family: tahoma, arial, serif;
+}
+h2 {
+	padding: 0;
+	margin: 0;
+	font-size: 36pt;
+	color: #FF5500;
+}
+
+h3 {
+	padding: 0;
+	margin: 0;
+	font-size: 10pt;
+	color: #444;
+	padding: 2px;
+	background-color: #eee;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+h3 a {
+	font-size: 10pt;
+}
+
+h3 span.state em {
+	color: #777;
+	font-size: 10pt;
+	font-style:normal;
+}
+
 
 body {
 	margin: 0;
@@ -79,47 +102,23 @@ body {
 	margin: 10px auto;
 }
 
-h2 {
-	padding: 0;
-	margin: 0;
-	font-size: 36pt;
-	color: #FF5500;
-}
-
-h3 {
-	padding: 0;
-	margin: 0;
-	font-size: 10pt;
-	color: #444;
-	padding: 2px;
-	background-color: #eee;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-
-h3 a{
-	color: #777;
-	font-size: 10pt;
-}
-
-h3 span.state em {
-	color: #777;
-	font-size: 10pt;
-}
 
 .list-table td {
 	padding: 2px;
 }
 
 .scriptlist-table {
-	position:relative;
+	position: relative;
 	height: 300px;
 	max-height: 300px;
 	overflow-y: auto;
 	width: 260px;
 }
+
 .scriptlist-table table {
+	
 }
+
 .scriptlist-table td.title-col div {
 	width: 150px;
 	overflow-x: hidden;
@@ -130,8 +129,8 @@ h3 span.state em {
 }
 
 .scriptlist-table .paging {
-	position:absolute;
-	bottom:0;
+	position: absolute;
+	bottom: 0;
 	width: 255px;
 	text-align: center;
 	background-color: #ddd;

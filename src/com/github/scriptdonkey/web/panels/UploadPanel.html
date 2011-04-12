@@ -1,0 +1,33 @@
+<wicket:panel>
+
+	<h3>Push a new script:</h3>
+
+	<form wicket:id="form">
+		<table class="form-table" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>Script Title</td>
+				<td><input wicket:id="title" type="text" style="width: 220px" /></td>
+				<td>Lang</td>
+				<td><select wicket:id="lang" style="width: 100px">
+						<option>Groovy</option>
+						<option>Clojure</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4"><textarea wicket:id="script"
+						style="width: 500px; height: 260px"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<input wicket:id="submit" type="submit"	value="Push" />
+					<input wicket:id="delete" type="submit"	value="Delete" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4"><span wicket:id="info" style="font-size:11px;"></span></td>
+			</tr>
+		</table>
+	</form>
+</wicket:panel>
