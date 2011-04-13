@@ -18,6 +18,7 @@ public class ScriptListTablePanel extends Panel {
         private SwitchStateLink(final String id, final State state) {
             super(id);
             this.state = state;
+            setOutputMarkupId(true);
         }
 
         @Override
@@ -38,16 +39,26 @@ public class ScriptListTablePanel extends Panel {
     }
 
     private State state = State.ALL;
+    private final SwitchStateLink allScriptsLink;
+    private final SwitchStateLink myScriptsLink;
+    private final SwitchStateLink searchScriptLink;
+    private final ScriptListTable table;
 
     public ScriptListTablePanel(final String id) {
         super(id);
         setOutputMarkupId(true);
 
-        add(new SwitchStateLink("allscripts-link", State.ALL));
-        add(new SwitchStateLink("myscripts-link", State.MINE));
-        add(new SwitchStateLink("search-link", State.SEARCH_INPUT));
+        allScriptsLink = new SwitchStateLink("allscripts-link", State.ALL);
+        add(allScriptsLink);
+        myScriptsLink = new SwitchStateLink("myscripts-link", State.MINE);
+        add(myScriptsLink);
+        searchScriptLink = new SwitchStateLink("search-link",
+                State.SEARCH_INPUT);
+        add(searchScriptLink);
 
-        add(new ScriptListTable("table", new ScriptTemplateDataProvider()));
+        table = new ScriptListTable("table", new ScriptTemplateDataProvider());
+        table.setOutputMarkupId(true);
+        add(table);
     }
 
     protected void switchState(final State newState,

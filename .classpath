@@ -7,10 +7,10 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/wicket-core-1.5-SNAPSHOT.jar" sourcepath="/wicket-core"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/wicket-extensions-1.5-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/wicket-request-1.5-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/wicket-util-1.5-SNAPSHOT.jar" sourcepath="/wicket-util"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/wicket-core-1.5-20110318.210730-264.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

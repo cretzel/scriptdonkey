@@ -1,5 +1,6 @@
 package com.github.scriptdonkey.web.pages;
 
+import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.IModel;
@@ -29,6 +30,11 @@ public abstract class DonkeyBasePage extends WebPage {
     private void init() {
         add(new LoginLink("login"));
         add(new FeedbackPanel("feedback"));
+    }
+
+    @Override
+    public void renderHead(final IHeaderResponse response) {
+        super.renderHead(response);
     }
 
 }

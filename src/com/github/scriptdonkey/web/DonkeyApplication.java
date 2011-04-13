@@ -5,7 +5,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.wicket.ConverterLocator;
 import org.apache.wicket.Page;
 import org.apache.wicket.RuntimeConfigurationType;
+import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.protocol.http.WebSession;
+import org.apache.wicket.request.Request;
+import org.apache.wicket.request.Response;
 import org.apache.wicket.request.http.WebRequest;
 import org.apache.wicket.util.lang.WicketObjects;
 
@@ -33,6 +37,13 @@ public class DonkeyApplication extends WebApplication {
     }
 
     @Override
+    public Session newSession(final Request request, final Response response) {
+        final WebSession webSession = new WebSession(request);
+        webSession.bind();
+        return webSession;
+    }
+
+    @Override
     protected WebRequest newWebRequest(final HttpServletRequest servletRequest,
             final String filterPath) {
         watcher.check();
@@ -41,8 +52,8 @@ public class DonkeyApplication extends WebApplication {
 
     @Override
     public RuntimeConfigurationType getConfigurationType() {
-        return RuntimeConfigurationType.DEPLOYMENT;
-        // return RuntimeConfigurationType.DEVELOPMENT;
+//        return RuntimeConfigurationType.DEPLOYMENT;
+         return RuntimeConfigurationType.DEVELOPMENT;
     }
 
     @Override
