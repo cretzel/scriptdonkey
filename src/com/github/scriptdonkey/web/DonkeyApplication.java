@@ -52,8 +52,8 @@ public class DonkeyApplication extends WebApplication {
 
     @Override
     public RuntimeConfigurationType getConfigurationType() {
-//        return RuntimeConfigurationType.DEPLOYMENT;
-         return RuntimeConfigurationType.DEVELOPMENT;
+        return RuntimeConfigurationType.DEPLOYMENT;
+        // return RuntimeConfigurationType.DEVELOPMENT;
     }
 
     @Override

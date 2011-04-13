@@ -11,6 +11,14 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/wicket-request-1.5-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/wicket-util-1.5-SNAPSHOT.jar" sourcepath="/wicket-util"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/wicket-core-1.5-20110318.210730-264.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/console-engine-1.5-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/groovy-1.7.8.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-3.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-analysis-3.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-commons-3.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-tree-3.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/asm-util-3.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/antlr-2.7.6.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
