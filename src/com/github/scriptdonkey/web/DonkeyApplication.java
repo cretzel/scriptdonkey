@@ -11,10 +11,14 @@ import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 import org.apache.wicket.request.http.WebRequest;
+import org.apache.wicket.settings.IExceptionSettings;
 import org.apache.wicket.util.lang.WicketObjects;
 
 import com.github.scriptdonkey.model.Lang;
+import com.github.scriptdonkey.web.pages.AccessDeniedPage;
 import com.github.scriptdonkey.web.pages.DonkeyHomePage;
+import com.github.scriptdonkey.web.pages.InternalErrorPage;
+import com.github.scriptdonkey.web.pages.PageExpiredPage;
 import com.github.scriptdonkey.web.util.LangConverter;
 
 public class DonkeyApplication extends WebApplication {
@@ -34,6 +38,12 @@ public class DonkeyApplication extends WebApplication {
 
         final ConverterLocator converterLocator = (ConverterLocator) getConverterLocator();
         converterLocator.set(Lang.class, new LangConverter());
+
+        getExceptionSettings().setUnexpectedExceptionDisplay(
+                IExceptionSettings.SHOW_INTERNAL_ERROR_PAGE);
+        getApplicationSettings().setInternalErrorPage(InternalErrorPage.class);
+        getApplicationSettings().setPageExpiredErrorPage(PageExpiredPage.class);
+        getApplicationSettings().setAccessDeniedPage(AccessDeniedPage.class);
     }
 
     @Override
@@ -52,8 +62,8 @@ public class DonkeyApplication extends WebApplication {
 
     @Override
     public RuntimeConfigurationType getConfigurationType() {
-        return RuntimeConfigurationType.DEPLOYMENT;
-        // return RuntimeConfigurationType.DEVELOPMENT;
+        // return RuntimeConfigurationType.DEPLOYMENT;
+        return RuntimeConfigurationType.DEVELOPMENT;
     }
 
     @Override
