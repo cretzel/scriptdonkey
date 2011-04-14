@@ -60,4 +60,7 @@ public class Login {
         return null;
     }
 
+    public static boolean isUserAdmin() {
+        return isUserLoggedIn() && userService.isUserAdmin();
+    }
 }

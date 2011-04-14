@@ -5,7 +5,9 @@ def xml = {
   mkp.xmlDeclaration()
   script(id:template.key.id){
     title(template.title)
-    mkp.yieldUnescaped("<![CDATA[${template.script}]]>")
+    script {
+	    mkp.yieldUnescaped("<![CDATA[${template.script}]]>")
+	}
   }
 }
 def writer = new StringWriter()

@@ -16,6 +16,7 @@ import org.apache.wicket.util.lang.WicketObjects;
 
 import com.github.scriptdonkey.model.Lang;
 import com.github.scriptdonkey.web.pages.AccessDeniedPage;
+import com.github.scriptdonkey.web.pages.ConsolePage;
 import com.github.scriptdonkey.web.pages.DonkeyHomePage;
 import com.github.scriptdonkey.web.pages.InternalErrorPage;
 import com.github.scriptdonkey.web.pages.PageExpiredPage;
@@ -44,6 +45,8 @@ public class DonkeyApplication extends WebApplication {
         getApplicationSettings().setInternalErrorPage(InternalErrorPage.class);
         getApplicationSettings().setPageExpiredErrorPage(PageExpiredPage.class);
         getApplicationSettings().setAccessDeniedPage(AccessDeniedPage.class);
+
+        mountPage("console", ConsolePage.class);
     }
 
     @Override

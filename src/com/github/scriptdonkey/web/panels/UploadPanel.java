@@ -12,6 +12,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.model.ResourceModel;
 import org.apache.wicket.validation.validator.StringValidator.LengthBetweenValidator;
 
@@ -92,6 +93,8 @@ public class UploadPanel extends Panel {
                 new LangChoiceRenderer());
         langDd.setEnabled(isUpdateAllowed());
         form.add(langDd);
+
+        form.add(new Label("scriptid", new PropertyModel<Long>(model, "key.id")));
 
         scriptTa = new TextArea<String>("script");
         scriptTa.setEnabled(isUpdateAllowed());
