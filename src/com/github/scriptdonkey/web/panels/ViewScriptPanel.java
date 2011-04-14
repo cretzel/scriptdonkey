@@ -5,6 +5,7 @@ import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.PropertyModel;
 
 import com.github.scriptdonkey.model.ScriptTemplate;
 
@@ -23,6 +24,8 @@ public class ViewScriptPanel extends Panel {
 
         lang = new Label("lang");
         add(lang);
+
+        add(new Label("scriptid", new PropertyModel<Long>(model, "key.id")));
 
         scriptTa = new TextArea<String>("script");
         add(scriptTa);
