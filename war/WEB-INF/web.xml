@@ -5,12 +5,12 @@
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<servlet>
-		<servlet-name>RestServlet</servlet-name>
-		<servlet-class>com.github.scriptdonkey.model.api.RestServlet</servlet-class>
+		<servlet-name>ApiSingleScriptServlet</servlet-name>
+		<servlet-class>com.github.scriptdonkey.api.ApiSingleScriptServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>RestServlet</servlet-name>
-		<url-pattern>/api/foo</url-pattern>
+		<servlet-name>ApiSingleScriptServlet</servlet-name>
+		<url-pattern>/api/templates/*</url-pattern>
 	</servlet-mapping>
 	<filter>
 		<filter-name>WicketFilter</filter-name>

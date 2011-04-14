@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import javax.jdo.JDOObjectNotFoundException;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.jdo.annotations.IdGeneratorStrategy;
@@ -21,6 +22,7 @@ import javax.jdo.annotations.PrimaryKey;
 import com.github.scriptdonkey.persistence.PMF;
 import com.github.scriptdonkey.web.util.Users;
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.users.User;
 import com.google.appengine.repackaged.com.google.common.collect.Lists;
 import com.google.appengine.repackaged.com.google.common.collect.Maps;
@@ -28,6 +30,8 @@ import com.google.appengine.repackaged.com.google.common.collect.Sets;
 
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class ScriptTemplate implements Serializable {
+
+    private static final String KIND = ScriptTemplate.class.getSimpleName();
 
     private static final long serialVersionUID = 1L;
 
@@ -186,6 +190,8 @@ public class ScriptTemplate implements Serializable {
                     ScriptTemplate.class, key);
             pm.detachCopy(objectById);
             return objectById;
+        } catch (final JDOObjectNotFoundException e) {
+            return null;
         } finally {
             pm.close();
         }
@@ -368,6 +374,11 @@ public class ScriptTemplate implements Serializable {
         } else {
             return 0;
         }
+    }
+
+    public static ScriptTemplate get(final Long id) {
+        final Key key = KeyFactory.createKey(KIND, id);
+        return get(key);
     }
 
 }
