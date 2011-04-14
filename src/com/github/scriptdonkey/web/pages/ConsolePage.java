@@ -18,10 +18,13 @@ public class ConsolePage extends DonkeyBasePage {
         enginePanel
                 .setInput("import org.apache.wicket.ajax.AjaxRequestTarget;\n"
                         + "\n"
-                        + "def templateId = 46\n"
-                        + "def host = \"http://localhost:8888\"\n"
+                        + "def templateId = 1\n"
+                        + "def host = \"http://scriptdonkey.appspot.com\"\n"
                         + "def url = new java.net.URL(\"${host}/api/templates/${templateId}\")\n"
-                        + "def xml = new XmlSlurper().parse(url.newReader())\n"
+                        + "def con = url.openConnection()\n"
+                        + "con.setConnectTimeout(10000)\n"
+                        + "\n"
+                        + "def xml = new XmlSlurper().parse(con.getContent())\n"
                         + "component.setInput(xml.script.text())\n"
                         + "AjaxRequestTarget.get().add(component.getInputTf())\n");
 
