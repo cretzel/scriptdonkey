@@ -8,6 +8,7 @@ body,p,li,span,div,td,th,input,select,a,em {
 
 textarea {
 	font-family: courier new;
+	font-size:10pt;
 }
 
 input,select {
